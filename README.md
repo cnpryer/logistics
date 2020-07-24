@@ -1,2 +1,3 @@
 # logistics
-Rust library for logistics engineering.
+
+Rust Logistics Engineering library

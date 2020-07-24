@@ -1,0 +1,11 @@
+[package]
+name = "logistics"
+version = "0.1.0"
+authors = ["fingafrog"]
+license = "MIT"
+description = "Logistics Engineering library"
+repository = "https://github.com/fingafrog/logistics.git"
+homepage = "https://github.com/fingafrog/logistics.git"
+readme = "README.md"
+
+[dependencies]
