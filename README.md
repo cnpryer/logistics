@@ -25,7 +25,7 @@ Models will be limited to single-origin, one-dimension capacities and demands, a
 - Constraint Setup
 - Depot Latitude and Longitude
 - Demand Latitudes and Logitudes
-- Demands
+- Demand Units
 
 ## Development Strategy
 
