@@ -1,12 +1,30 @@
 [package]
+
 name = "logistics"
-version = "0.0.0"
+version = "0.0.1"
 authors = ["chrispryer"]
 license = "MIT"
-description = "Logistics Engineering library"
+description = "Logistics Engineering Library"
 repository = "https://github.com/andromia/logistics.git"
 homepage = "https://github.com/andromia/logistics.git"
 readme = "README.md"
-exclude = [".vscode/"]
+keywords = [
+    "logistics",
+    "modeling",
+    "supply chain",
+    "operations research",
+    "optimization",
+    "logistics engineering"
+]
+categories = [
+    "science", 
+    "mathematics", 
+    "business::operations research", 
+    "business::supply chain"
+]
+exclude = [".vscode/", "Vagrantfile", "vm-bootstrap.sh"]
+
+[package.metadata.docs.rs]
+features = ["std"]
 
 [dependencies]
