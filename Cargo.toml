@@ -9,17 +9,11 @@ repository = "https://github.com/andromia/logistics.git"
 homepage = "https://github.com/andromia/logistics.git"
 readme = "README.md"
 keywords = [
-    "logistics",
     "modeling",
     "supplychain",
-    "supply",
-    "chain",
-    "operationsreseacrch",
-    "operations",
-    "research",
+    "operationsresearch",
     "optimization",
     "logisticsengineering",
-    "engineering"
 ]
 categories = [
     "science", 
