@@ -1,6 +1,7 @@
 /*
 * TODO:
 *   - don't use globals
+*   - remove _ prefix when everything is used
 */
 
 // origin test data
@@ -9,7 +10,7 @@ pub const ORIGIN_LON: f32 = 120.0;
 
 // demand test data
 pub const N: usize = 10;
-pub const DEMAND: [i8; N] = [10, 9, 6, 4, 5, 12, 9, 10, 13, 6]; // TODO: add 0 demand
+pub const _DEMAND: [i8; N] = [10, 9, 6, 4, 5, 12, 9, 10, 13, 6]; // TODO: add 0 demand
 
 // destination test data
 pub const DEST_LATS: [f32; N] = [
@@ -25,9 +26,9 @@ pub const DEST_LONS: [f32; N] = [
 pub const INT_PRECISION: i32 = 100; // NOTE: better way to use less mem?
 
 // modeling constraints
-pub const MAX_VEHICLE_CAP: i8 = 26;
+pub const _MAX_VEHICLE_CAP: i8 = 26;
 // const NUM_VEHICLES: usize = N;
-pub const MAX_ROUTE_DIST: i32 = 3000 * INT_PRECISION;
+pub const _MAX_ROUTE_DIST: i32 = 3000 * INT_PRECISION;
 #[allow(dead_code)]
 pub enum DistanceUnit {
     KM,
