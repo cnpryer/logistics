@@ -11,10 +11,15 @@ readme = "README.md"
 keywords = [
     "logistics",
     "modeling",
-    "supply chain",
-    "operations research",
+    "supplychain",
+    "supply",
+    "chain",
+    "operationsreseacrch",
+    "operations",
+    "research",
     "optimization",
-    "logistics engineering"
+    "logisticsengineering",
+    "engineering"
 ]
 categories = [
     "science", 
