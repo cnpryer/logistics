@@ -2,6 +2,7 @@
 * TODO:
 * - get started. lay out the problem with initial model data including constraint values
 * - create initial methods to play with computation
+* - don't use globals
 * - abstract into proper testing and modules
 * - dev-tooling(?) - debug, testing, automation
 */
@@ -34,6 +35,18 @@ const MAX_ROUTE_DIST: i32 = 3000 * INT_PRECISION;
 
 // "types"
 type DistanceMatrixType = [[i32; N + 1]; N + 1];
+
+#[allow(dead_code)]
+enum DistanceUnit {
+    KM,
+    M,
+    MI,
+    NM,
+    FT,
+    IN,
+}
+
+const DISTANCE_UNIT: DistanceUnit = DistanceUnit::MI;
 
 pub fn main() {
     println!(
@@ -86,13 +99,14 @@ fn create_distance_matrix(
     }
 
     // TODO: don't want 0 initial values
+    let unit = DISTANCE_UNIT;
     let mut distance_matrix: DistanceMatrixType = [[0; N + 1]; N + 1];
     for i in 0..N + 1 {
         for j in 0..N + 1 {
             let origin = geocode_matrix[i];
             let dest = geocode_matrix[j];
 
-            distance_matrix[i][j] = (cacluate_haversine(origin, dest, "mi")
+            distance_matrix[i][j] = (cacluate_haversine(origin, dest, &unit)
                 * INT_PRECISION as f32)
                 .round() as i32;
         }
@@ -101,7 +115,7 @@ fn create_distance_matrix(
     distance_matrix
 }
 
-fn cacluate_haversine(origin: [f32; 2], dest: [f32; 2], unit: &str) -> f32 {
+fn cacluate_haversine(origin: [f32; 2], dest: [f32; 2], unit: &DistanceUnit) -> f32 {
     /*
      * Caculates distance between two geo coordinate pairs using haversine method.
      *
@@ -116,13 +130,12 @@ fn cacluate_haversine(origin: [f32; 2], dest: [f32; 2], unit: &str) -> f32 {
     const AVG_EARTH_RADIUS: f32 = 6371.0088; // in km
 
     let radius = match unit {
-        "km" => AVG_EARTH_RADIUS * 1.0,
-        "m" => AVG_EARTH_RADIUS * 1000.0,
-        "mi" => AVG_EARTH_RADIUS * 0.621371192,
-        "nm" => AVG_EARTH_RADIUS * 0.539956803,
-        "ft" => AVG_EARTH_RADIUS * 3280.839895013,
-        "in" => AVG_EARTH_RADIUS * 39370.078740158,
-        _ => panic!("invalid unit"),
+        DistanceUnit::KM => AVG_EARTH_RADIUS * 1.0,
+        DistanceUnit::MI => AVG_EARTH_RADIUS * 1000.0,
+        DistanceUnit::M => AVG_EARTH_RADIUS * 0.621371192,
+        DistanceUnit::NM => AVG_EARTH_RADIUS * 0.539956803,
+        DistanceUnit::FT => AVG_EARTH_RADIUS * 3280.839895013,
+        DistanceUnit::IN => AVG_EARTH_RADIUS * 39370.078740158,
     };
 
     let r_olat = origin[0].to_radians();
@@ -151,11 +164,12 @@ mod tests {
     }
 
     #[test]
-    fn test_calculate_haversine() {
+    fn test_valid_calculate_haversine() {
         let origin = [0.0, 0.0];
         let dest = [0.0, 0.0];
+        let unit = DistanceUnit::MI;
 
-        let _result = cacluate_haversine(origin, dest, "mi");
-        // TODO: add cases for invalid and valid units
+        let result = cacluate_haversine(origin, dest, &unit);
+        assert_eq!(result, 0.0);
     }
 }
