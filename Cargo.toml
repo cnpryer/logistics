@@ -18,8 +18,7 @@ keywords = [
 categories = [
     "science", 
     "mathematics", 
-    "business::operations research", 
-    "business::supply chain"
+    "business"
 ]
 exclude = [".vscode/", "Vagrantfile", "vm-bootstrap.sh"]
 
