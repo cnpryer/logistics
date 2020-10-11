@@ -9,7 +9,7 @@ pub mod tests {
 
     #[test]
     fn test_demand() {
-        assert_eq!(common::N, common::DEMAND.len());
+        assert_eq!(common::N, common::_DEMAND.len());
     }
 
     #[test]
