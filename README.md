@@ -1,3 +1,5 @@
+[![](http://meritbadge.herokuapp.com/logistics)](https://crates.io/crates/logistics)
+
 # logistics
 
 Rust Logistics Engineering Library
