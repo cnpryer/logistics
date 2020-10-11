@@ -41,7 +41,7 @@ fn create_geo_matrix(
         geo_matrix[i] = [dlats[i - 1], dlons[i - 1]];
     }
 
-    geo_matrix
+    return geo_matrix;
 }
 
 fn create_distance_matrix(
@@ -76,7 +76,7 @@ fn create_distance_matrix(
         }
     }
 
-    dist_matrix
+    return dist_matrix;
 }
 
 fn cacluate_haversine(
@@ -108,5 +108,5 @@ fn cacluate_haversine(
     let d = ((r_dlat - r_olat) * 0.5).sin().powi(2)
         + r_olat.cos() * r_dlat.cos() * ((r_dlon - r_olon) * 0.5).powi(2);
 
-    2.0 * radius * d.sqrt().asin()
+    return 2.0 * radius * d.sqrt().asin();
 }
