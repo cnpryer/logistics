@@ -1,25 +1,15 @@
 /*
 * TODO:
+* - abstract utilies into utils module
 * - dev-tooling: debug, automation
 */
 mod common;
 mod tests; // TODO: look into integration tests (see book)
 
 pub fn solve() {
-    println!(
-        "Initialized with N={},
-        origin=({},{}),
-        num demands={},
-        max vehicle capacity={},
-        max route distance={}",
-        common::N,
-        common::ORIGIN_LAT,
-        common::ORIGIN_LON,
-        common::DEMAND.len(),
-        common::MAX_VEHICLE_CAP,
-        common::MAX_ROUTE_DIST
-    );
-
+    /*
+     * TODO: take only processed input data (vehicles, demand, distance matrix)
+     */
     let olat = common::ORIGIN_LAT;
     let olon = common::ORIGIN_LON;
     let dlats = common::DEST_LATS;
