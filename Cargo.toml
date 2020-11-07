@@ -1,10 +1,10 @@
 [package]
 
 name = "logistics"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["chrispryer"]
 license = "MIT"
-description = "Logistics Engineering Library"
+description = "Logistics Engineering Client"
 repository = "https://github.com/andromia/logistics.git"
 homepage = "https://github.com/andromia/logistics.git"
 readme = "README.md"
@@ -16,8 +16,7 @@ keywords = [
 ]
 categories = [
     "science", 
-    "mathematics", 
-    "business"
+    "mathematics",
 ]
 exclude = [".vscode/", "Vagrantfile", "vm-bootstrap.sh"]
 
@@ -25,3 +24,4 @@ exclude = [".vscode/", "Vagrantfile", "vm-bootstrap.sh"]
 features = ["std"]
 
 [dependencies]
+solver = "0.0.2"
