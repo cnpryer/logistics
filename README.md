@@ -6,8 +6,35 @@ Rust Logistics Engineering Client
 
 ## About
 
+Development project to build CLI Application bundled with filesystem processing and server clients. `logistics` builds and manages projects for logistics engineering models.
+
+- project_name
+  - .logistics
+  - demand
+     - file1
+     - file2
+
+`.logistics`
+```.logistics
+origin [OPTIONAL]:
+  - "origin_city"
+  - "origin_state"
+  - "origin_zip"
+origin [OPTIONAL]:
+  - origin_city: "city"
+  - origin_state: "state"
+  - origin_zip: "zip code"
+destination [REQUIRED]:
+  - "dest_city"
+  - "dest_state"
+  - "dest_zip"
+capacity [OPTIONAL]:
+  - "pallets"
+  - weight: "lbs"
+```
+
 **CLI**:
-`logistics ./file --vrp`
+`logistics demand/file1 --vrp`
 
 **Server**:
 `logistics run server --port=9999`
