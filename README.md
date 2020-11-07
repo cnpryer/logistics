@@ -2,19 +2,23 @@
 
 # logistics
 
-Rust Logistics Engineering Library
+Rust Logistics Engineering Client
 
 ## About
 
-This is a logistics engineering library developed from the ground up for both software developers and logistics engineers with programming experience.
+**CLI**:
+`logistics ./file --vrp`
+
+**Server**:
+`logistics run server --port=9999`
 
 ## Shipment Routing
 
-The first target of the library is to provide an efficient method for generating optimized vehicle routes for small and highly-defined transportation optimization models.
+The first target of the client is to provide an efficient method for generating optimized VRP solutions from csv data.
 
 ### Scope
 
-Models will be limited to single-origin, one-dimension capacities and demands, and optimized only using the inital distance and capacity constraints. Each iteration of this component's development will aim to expand scope little by little.
+Models will be limited to single-origin, one-dimension capacities and demands, and optimized only using the inital distance and capacity constraints.
 
 ### Constraints
 
@@ -28,16 +32,3 @@ Models will be limited to single-origin, one-dimension capacities and demands, a
 - Depot Latitude and Longitude
 - Demand Latitudes and Logitudes
 - Demand Units
-
-## Development Strategy
-
-This library is intended for developers and logistics engineers looking for optimization capabilities for their systematic use-cases. So the project will focus on the problem domain as each initial target and then retroactively refactored into more modular components. 
-
-For example, the routing solution will rely on an implementation of an integer constraint solver. This solver won't be fleshed out first and then a _Shipment Routing_ component is fit to the solver. The design is reversed, forcing the solver to accommodate the business constraints prior to being completed.
-
-This allows for more flexible solver development and, in general, a better development workflow for `logistics`. 
-
-
-# Inspirations
-
-- [ortools](https://github.com/google/or-tools)
